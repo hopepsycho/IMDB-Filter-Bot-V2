@@ -14,11 +14,11 @@
 
 __This Is a Reloaded Verion Of The  [Adv-Auto-Filter-Bot-V2](https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2)..__
 * ADDED FEATURES :
-* - Imdb Poster Along With Results 
-* - Added Option to Send The Size Of File As A Seperate Button 
-* - Added Force Sub Feature For You Guyzz
-* - Added A Backup Imag eIf No Imdb Results Were Found 
-* - Unecessarily added Lot more filter Per Page Options In settings
+ - Imdb Poster Along With Results 
+ - Added Option to Send The Size Of File As A Seperate Button 
+ - Added Force Sub Feature For You Guyzz
+ - Added A Backup Imag eIf No Imdb Results Were Found 
+ - Unecessarily added Lot more filter Per Page Options In settings
 
 __Just Sent Any Text As Query It Will Search For All Connected Chat's Files In Its MongoDB And Reply You With The Message Link As A Button__
 

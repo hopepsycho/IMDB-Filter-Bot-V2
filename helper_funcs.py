@@ -10,10 +10,13 @@ async def get_poster(movie_name) :
             test = int(i)
             movie_name = movie_name.replace(i)
         except ValueError :
-            return("No Results")
+            pass
+    try :
 
-    results = searcher.search_movie(movie_name)
-    movie_id = results[0].movieID
+       results = searcher.search_movie(movie_name)
+       movie_id = results[0].movieID
+    except IndexError :
+        return("No Results")
     poster = results[0].get_fullsizeURL()
     votes = searcher.get_movie_vote_details(movie_id)["data"]["demographics"]["imdb users"]["votes"]
     rating = searcher.get_movie_vote_details(movie_id)["data"]["demographics"]["imdb users"]["rating"]
