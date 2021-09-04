@@ -12,7 +12,13 @@
   </a>  
 </p>
 
-__This Is Just An Simple Advance Auto Filter Bot Complete Rewritten Version Of [Adv-Filter-Bot](https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot)..__
+__This Is a Reloaded Verion Of The  [Adv-Auto-Filter-Bot-V2](https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2)..__
+* ADDED FEATURES :
+* - Imdb Poster Along With Results 
+* - Added Option to Send The Size Of File As A Seperate Button 
+* - Added Force Sub Feature For You Guyzz
+* - Added A Backup Imag eIf No Imdb Results Were Found 
+* - Unecessarily added Lot more filter Per Page Options In settings
 
 __Just Sent Any Text As Query It Will Search For All Connected Chat's Files In Its MongoDB And Reply You With The Message Link As A Button__
 
@@ -23,6 +29,32 @@ __Just Sent Any Text As Query It Will Search For All Connected Chat's Files In I
 
 * -> Add me to any group and make me admin<br>
 * -> Add me to your channel as admin with full previlages
+
+## Deploy
+You can deploy this bot anywhere.
+
+<i>**[Watch Deploying Tutorial...](https://youtu.be/KTearEPhumc)**</i>
+
+<details><summary>Deploy To Heroku</summary>
+<p>
+<br>
+<a href="https://heroku.com/deploy?template=https://github.com/MrPurple902/IMDB-Filter-Bot-V2/tree/main">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
+
+<details><summary>Deploy To VPS</summary>
+<p>
+<pre>
+git clone https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2
+cd Adv-Auto-Filter-Bot-V2
+pip3 install -r requirements.txt
+# Change The Vars Of bot/__init__.py File Accordingly
+python3 -m bot
+</pre>
+</p>
+</details>
 
 **Bot Commands (Works Only In Groups) :**
 
@@ -65,31 +97,6 @@ OR
 
 #### PR's Are Very Welcome
 
-## Deploy
-You can deploy this bot anywhere.
-
-<i>**[Watch Deploying Tutorial...](https://youtu.be/KTearEPhumc)**</i>
-
-<details><summary>Deploy To Heroku</summary>
-<p>
-<br>
-<a href="https://heroku.com/deploy?template=https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot-V2/tree/main">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-</a>
-</p>
-</details>
-
-<details><summary>Deploy To VPS</summary>
-<p>
-<pre>
-git clone https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2
-cd Adv-Auto-Filter-Bot-V2
-pip3 install -r requirements.txt
-# Change The Vars Of bot/__init__.py File Accordingly
-python3 -m bot
-</pre>
-</p>
-</details>
 
 ## Support   
 Join Our [Telegram Group](https://www.telegram.dog/CrazyBotszGrp) For Support/Assistance And Our [Channel](https://www.telegram.dog/CrazyBotsz) For Updates.   

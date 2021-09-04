@@ -27,6 +27,18 @@
             "description": "Your Mongo DB URL Obtained From mongodb.com",
             "value": ""
         },
+        "SIZE_BUTTON": {
+            "description": "The File size will Be sent as a seperate button By Default Change To False to Send It With The File Name",
+            "value": "True"
+        },
+        "DEFAULT_IMAGE": {
+            "description": "The URL Of the Image to be Sent If No IMDB Results are found",
+            "value": ""
+        },
+        "FSUB_CHANNEL": {
+            "description": "The ID of Channel You want People To Join to Get Movie Files",
+            "value": ""
+        },
         "USER_SESSION": {
             "description": "A Pyrogram User Session String. Generated From @PyrogramStringBot",
             "value": ""
