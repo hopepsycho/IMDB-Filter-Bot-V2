@@ -1063,11 +1063,19 @@ async def cb_max_buttons(bot, update: CallbackQuery):
     buttons = [
         [
             InlineKeyboardButton
+            (
+                 "4 Filters", callback_data=f"set(per_page|4|{chat_id}|{count})"
+            ),
+            InlineKeyboardButton
                 (
                     "5 Filters", callback_data=f"set(per_page|5|{chat_id}|{count})"
                 )
         ],
         [
+            InlineKeyboardButton
+            (
+                 "8 Filters", callback_data=f"set(per_page|8|{chat_id}|{count})"
+            ),
             InlineKeyboardButton
                 (
                     "10 Filters", callback_data=f"set(per_page|10|{chat_id}|{count})"
@@ -1075,11 +1083,19 @@ async def cb_max_buttons(bot, update: CallbackQuery):
         ],
         [
             InlineKeyboardButton
+            (
+                 "12 Filters", callback_data=f"set(per_page|12|{chat_id}|{count})"
+            ),
+            InlineKeyboardButton
                 (
                     "15 Filters", callback_data=f"set(per_page|15|{chat_id}|{count})"
                 )
         ],
         [
+            InlineKeyboardButton
+            (
+                 "18 Filters", callback_data=f"set(per_page|18|{chat_id}|{count})"
+            ),
             InlineKeyboardButton
                 (
                     "20 Filters", callback_data=f"set(per_page|20|{chat_id}|{count})"
@@ -1087,11 +1103,19 @@ async def cb_max_buttons(bot, update: CallbackQuery):
         ],
         [
             InlineKeyboardButton
+            (
+                 "22 Filters", callback_data=f"set(per_page|22|{chat_id}|{count})"
+            ),
+            InlineKeyboardButton
                 (
                     "25 Filters", callback_data=f"set(per_page|25|{chat_id}|{count})"
                 )
         ],
         [
+            InlineKeyboardButton
+            (
+                 "28 Filters", callback_data=f"set(per_page|28|{chat_id}|{count})"
+            ),
             InlineKeyboardButton
                 (
                     "30 Filters", callback_data=f"set(per_page|30|{chat_id}|{count})"
@@ -1602,7 +1626,7 @@ async def cb_about(bot, update: CallbackQuery):
     text+=f"\n<b><i>Bot's Uptime:</i></b> <code>{time_formatter(time.time() - start_uptime)}</code>\n"
     text+=f"\n<b><i>Bot Funtion:</i></b> <i>Auto Filter Files</i>\n"
     text+=f"""\n<b><i>Bot Support:</i></b> <a href="https://t.me/CrazyBotszGrp">@CrazyBotszGrp</a>\n"""
-    text+="""\n<b><i>Source Code:</i></b> <a href="https://github.com/CrazyBotsz/Adv-Filter-Bot-V2">Source</a>"""
+    text+="""\n<b><i>Source Code:</i></b> <a href="https://github.com/MrPurple902/IMDB-Filter-Bot-V2">Source</a>"""
 
     buttons = [
         [
@@ -1640,7 +1664,7 @@ async def callback_data(bot, update: CallbackQuery):
     if query_data == "start":
         buttons = [[
             InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/AlbertEinstein_TG'),
-            InlineKeyboardButton('Source Code 🧾', url ='https://github.com/CrazyBotsz/Adv-Filter-Bot-V2')
+            InlineKeyboardButton('Source Code 🧾', url ='https://github.com/MrPurple902/IMDB-Filter-Bot-V2')
         ],[
             InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
         ],[

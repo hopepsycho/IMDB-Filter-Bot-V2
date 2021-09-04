@@ -8,6 +8,8 @@ from pyrogram.errors import ButtonDataInvalid, FloodWait
 
 from bot.database import Database # pylint: disable=import-error
 from bot.bot import Bot # pylint: disable=import-error
+from bot import Translation
+from helper_funcs import get_poster
 
 
 FIND = {}
@@ -32,6 +34,8 @@ async def auto_filter(bot, update):
     
     if len(query) < 2:
         return
+
+    imdb_result = await get_poster(update.text)
     
     results = []
     
@@ -118,12 +122,21 @@ async def auto_filter(bot, update):
                 
                 bot_ = FIND.get("bot_details")
                 file_link = f"https://t.me/{bot_.username}?start={unique_id}"
-            
-            results.append(
+            if Translation.SIZE_BUTTON :
+                results.append(
+                    [
+                        InlineKeyboardButton(file_name, url=file_link),
+                        InlineKeyboardButton(file_size, callback_data="ignore")
+                    ]
+                )
+            else :
+                results.append(
                 [
                     InlineKeyboardButton(button_text, url=file_link)
                 ]
             )
+            
+            
         
     else:
         return # return if no files found for that query
@@ -200,10 +213,30 @@ async def auto_filter(bot, update):
             
         reply_markup = InlineKeyboardMarkup(result[0])
 
-        try:
-            await bot.send_message(
+        if imdb_result=="No Results" :
+            try:
+               await bot.send_photo(
                 chat_id = update.chat.id,
-                text=f"Found {(len_results)} Results For Your Query: <code>{query}</code>",
+                photo=Translation.BACKUP_IMAGE,
+                caption=f"<b>Movie/Series : {query}</b>\n<b>Results : {(len_results)}</b>",
+                reply_markup=reply_markup,
+                parse_mode="html",
+                reply_to_message_id=update.message_id
+               )
+               return
+
+            except ButtonDataInvalid:
+               print(result[0])
+            except Exception as f :
+                print(f)
+
+        poster, votes, rating = imdb_result.split("|",2)
+
+        try:
+            await bot.send_photo(
+                chat_id = update.chat.id,
+                photo=poster,
+                caption=f"<b>Movie/Series : {query}</b>\n<b>Results : {(len_results)}</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id

@@ -3,9 +3,11 @@
 # (c) @AlbertEinsteinTG
 
 from pyrogram import filters, Client
+from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
+from pyrogram.errors import PeerIdInvalid, UserNotParticipant
 
 db = Database()
 
@@ -16,6 +18,33 @@ async def start(bot, update):
         file_uid = update.command[1]
     except IndexError:
         file_uid = False
+    try :
+        await bot.get_chat_member(update.from_user.id, Translation.FSUB_CHANNEL)
+    except PeerIdInvalid :
+        print("Add Me As Admin In Your FSub Channel If It Still Didnt Work Check The ID You Provided")
+    except UserNotParticipant :
+        Fsub_Channel = await bot.get_chat(Translation.FSUB_CHANNEL)
+        invite_link = Fsub_Channel.invite_link
+        if file_uid :
+            my_bot = await bot.get_me().username
+            buttons = [
+                InlineKeyboardButton("Channel", url=invite_link),
+                InlineKeyboardButton("Retry", url=f"https://t.me/{my_bot}?start={file_uid}")
+            ]
+        else :
+            buttons = [
+                InlineKeyboardButton("Channel", url=invite_link),
+                InlineKeyboardButton("Support", url="https://t.me/CrazyBotsz")
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+
+        await bot.send_message(
+            text=f"<b>Oh No You Havent Joined My <a href='{invite_link}'>Channel</a> Please Join And Come Back To Use Me .</b>",
+            reply_markup=reply_markup,
+            parse_mode="html",
+            disable_webpage_preview=True
+        )
+        return
     
     if file_uid:
         file_id, file_name, file_caption, file_type = await db.get_file(file_uid)
@@ -48,7 +77,7 @@ async def start(bot, update):
 
     buttons = [[
         InlineKeyboardButton('Developers', url='https://t.me/CrazyBotsz'),
-        InlineKeyboardButton('Source Code 🧾', url ='https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2')
+        InlineKeyboardButton('Source Code 🧾', url ='https://github.com/MrPurple902/IMDB-Filter-Bot-V2')
     ],[
         InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
     ],[
