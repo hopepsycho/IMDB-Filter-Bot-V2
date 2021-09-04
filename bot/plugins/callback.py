@@ -139,22 +139,25 @@ async def cb_navg(bot, update: CallbackQuery):
             temp_results.insert(0, x)
         ibuttons = None
         achatId = None
+
+    Fsub_Channel = await bot.get_chat(Translation.FSUB_CHANNEL)
+    invite_link = Fsub_Channel.invite_link
     
-    reply_markup = InlineKeyboardMarkup(temp_results)
+    reply_markup = InlineKeyboardMarkup([InlineKeyboardButton("Join my channel", url=invite_link)]+temp_results)
     
-    text=f"<i>Found</i> <code>{leng}</code> <i>Results For Your Query:</i> <code>{query}</code>"
+    text=f"<b>Movie/Series : <code>{query}</code></b>\n<b>Results : {(leng)}</b>"
         
     try:
-        await update.message.edit(
-                text,
+        await update.message.edit_caption(
+                caption=text,
                 reply_markup=reply_markup,
                 parse_mode="html"
         )
         
     except FloodWait as f: # Flood Wait Caused By Spamming Next/Back Buttons
         await asyncio.sleep(f.x)
-        await update.message.edit(
-                text,
+        await update.message.edit_caption(
+                caption=text,
                 reply_markup=reply_markup,
                 parse_mode="html"
         )

@@ -36,6 +36,8 @@ async def auto_filter(bot, update):
         return
 
     imdb_result = await get_poster(update.text)
+    if not imdb_result=="No Results":
+        poster, votes, rating = imdb_result.split("|",2)
     
     results = []
     
@@ -211,14 +213,17 @@ async def auto_filter(bot, update):
             achatId = None
             
             
-        reply_markup = InlineKeyboardMarkup(result[0])
+        Fsub_Channel = await bot.get_chat(Translation.FSUB_CHANNEL)
+        invite_link = Fsub_Channel.invite_link
+        reply_markup = InlineKeyboardMarkup([InlineKeyboardButton("Join my Channel", url=invite_link)]+result[0])
+        
 
         if imdb_result=="No Results" :
             try:
                await bot.send_photo(
                 chat_id = update.chat.id,
                 photo=Translation.BACKUP_IMAGE,
-                caption=f"<b>Movie/Series : {query}</b>\n<b>Results : {(len_results)}</b>",
+                caption=f"<b>Movie/Series : <code>{query}</code></b>\n<b>Results : {(len_results)}</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
@@ -230,13 +235,11 @@ async def auto_filter(bot, update):
             except Exception as f :
                 print(f)
 
-        poster, votes, rating = imdb_result.split("|",2)
-
         try:
             await bot.send_photo(
                 chat_id = update.chat.id,
                 photo=poster,
-                caption=f"<b>Movie/Series : {query}</b>\n<b>Results : {(len_results)}</b>",
+                caption=f"<b>Movie/Series : {query}</b>\n<b>Results : {(len_results)}\nVotes : {votes}\nRating : {rating}</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
