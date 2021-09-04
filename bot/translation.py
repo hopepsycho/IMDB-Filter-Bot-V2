@@ -63,3 +63,4 @@ For More Details Click Help Button Below..
     SIZE_BUTTON = bool(os.environ.get("SIZE_BUTTON"))
     BACKUP_IMAGE = os.environ.get("DEFAULT_IMAGE")
     FSUB_CHANNEL = os.environ.get("FSUB_CHANNEL")
+    FSUB_LINK = os.environ.get("FSUB_CHANNEL_LINK")
