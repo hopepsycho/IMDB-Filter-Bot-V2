@@ -140,8 +140,7 @@ async def cb_navg(bot, update: CallbackQuery):
         ibuttons = None
         achatId = None
 
-    Fsub_Channel = await bot.get_chat(Translation.FSUB_CHANNEL)
-    invite_link = Fsub_Channel.invite_link
+    invite_link = Translation.FSUB_LINK
     
     reply_markup = InlineKeyboardMarkup([InlineKeyboardButton("Join my channel", url=invite_link)]+temp_results)
     

@@ -212,9 +212,7 @@ async def auto_filter(bot, update):
             ibuttons = None # Free Up Memory...
             achatId = None
             
-            
-        Fsub_Channel = await bot.get_chat(Translation.FSUB_CHANNEL)
-        invite_link = Fsub_Channel.invite_link
+        invite_link = Translation.FSUB_LINK
         reply_markup = InlineKeyboardMarkup([InlineKeyboardButton("Join my Channel", url=invite_link)]+result[0])
         
 
