@@ -36,8 +36,6 @@ async def auto_filter(bot, update):
         return
 
     imdb_result = await get_poster(update.text)
-    if not imdb_result=="No Results":
-        poster, votes, rating = imdb_result.split("|",2)
     
     results = []
     
@@ -234,6 +232,7 @@ async def auto_filter(bot, update):
                 print(f)
 
         try:
+            poster, votes, rating = imdb_result.split("|",2)
             await bot.send_photo(
                 chat_id = update.chat.id,
                 photo=poster,
