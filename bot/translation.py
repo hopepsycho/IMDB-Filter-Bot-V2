@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) @AlbertEinsteinTG
+import os
 
 class Translation(object):
     
     START_TEXT = """<b>Hey {}!!</b>
 <i>Am Just A Advance Auto Filter Bot....😉
 
-Just Add Me To Your Group And Channel And Connect Them And See My Pevers 🔥🔥😝
+Join My Group And REquest A Movie To See My Pevers 🔥🔥😝
 
 For More Details Click Help Button Below..
 @CrazyBotsz
@@ -17,11 +18,11 @@ For More Details Click Help Button Below..
 <b><i><u>How To Use Me!?</u></i></b>
 
 <i>
--> Add Me To Any Group And Make Me Admin
--> Add Me To Your Desired Channel
+-> Join My Group 
+-> Ask for Your Movie
 </i>
 
-<b>Bot Commands (Works Only In Groups) :</b>
+<b>Bot Commands (Strictly Admins Only And Designed To work In a Specific Group) :</b>
 
     -> <code>/add chat_id</code>
                 OR                  - To Connect A Group With A Channel (Bot Should Be Admin With Full Previlages In Both Group And Channel)
@@ -50,9 +51,15 @@ For More Details Click Help Button Below..
     
 <b>➥ Creator</b> : <b><i><a href="https://t.me/AlbertEinstein_TG">AlbertEinstein_TG</a></i></b>
 
+<b>➥ ReCreator</b> : <b><i><a href="tg://user?id=1093541873">MrPurple902</a></i></b>
+
 <b>➥ Language</b> : <code>Python3</code>
 
 <b>➥ Library</b> : <i><a href="https://docs.pyrogram.org">Pyrogram Asyncio 1.13.0 </a></i>
 
 <b>➥ Source Code</b> : <i><a href="https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot">Click Me</a></i>
 """
+
+    SIZE_BUTTON = bool(os.environ.get("SIZE_BUTTON"))
+    BACKUP_IMAGE = os.environ.get("DEFAULT_IMAGE")
+    FSUB_CHANNEL = os.environ.get("FSUB_CHANNEL")
