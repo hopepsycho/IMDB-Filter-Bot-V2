@@ -1,15 +1,17 @@
 import re
 import logging
 import asyncio
+import imdb
 
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from pyrogram.errors import ButtonDataInvalid, FloodWait
+from pyrogram.errors import ButtonDataInvalid, FloodWait, PhotoIdInvalid
 
 from bot.database import Database # pylint: disable=import-error
 from bot.bot import Bot # pylint: disable=import-error
 from bot import Translation
-from helper_funcs import get_poster
+
+from helper_funcs import cleaner
 
 
 FIND = {}
@@ -34,8 +36,6 @@ async def auto_filter(bot, update):
     
     if len(query) < 2:
         return
-
-    imdb_result = await get_poster(update.text)
     
     results = []
     
@@ -212,10 +212,44 @@ async def auto_filter(bot, update):
             
         invite_link = Translation.FSUB_LINK
         reply_markup = InlineKeyboardMarkup([InlineKeyboardButton("Join my Channel", url=invite_link)]+result[0])
-        
 
-        if imdb_result=="No Results" :
-            try:
+        try:
+            searcher = imdb.IMDb()
+            movie = cleaner(update.text)
+            search_result = searcher.search_movie(movie)
+            movie_id = search_result[0].movieID
+            poster = search_result[0].get_fullsizeURL()
+
+            try :
+                votes = searcher.get_movie_vote_details(movie_id)["data"]["demographics"]["imdb users"]["votes"]
+                rating = searcher.get_movie_vote_details(movie_id)["data"]["demographics"]["imdb users"]["rating"]
+            except KeyError :
+                votes = 0
+                rating = 0.0
+
+            await bot.send_photo(
+                chat_id = update.chat.id,
+                photo=poster,
+                caption=f"<b>Movie/Series : {query}</b>\n<b>Results : {(len_results)}\nVotes : {votes}\nRating : {rating}</b>",
+                reply_markup=reply_markup,
+                parse_mode="html",
+                reply_to_message_id=update.message_id
+            )
+            return
+
+        except ButtonDataInvalid:
+            print(result[0])
+
+        except ValueError :
+            pass
+
+        except PhotoIdInvalid :     #Just In Case
+            pass
+        
+        except Exception as e:
+            print(e)
+
+        try:
                await bot.send_photo(
                 chat_id = update.chat.id,
                 photo=Translation.BACKUP_IMAGE,
@@ -226,27 +260,15 @@ async def auto_filter(bot, update):
                )
                return
 
-            except ButtonDataInvalid:
-               print(result[0])
-            except Exception as f :
-                print(f)
-
-        try:
-            poster, votes, rating = imdb_result.split("|",2)
-            await bot.send_photo(
-                chat_id = update.chat.id,
-                photo=poster,
-                caption=f"<b>Movie/Series : {query}</b>\n<b>Results : {(len_results)}\nVotes : {votes}\nRating : {rating}</b>",
-                reply_markup=reply_markup,
-                parse_mode="html",
-                reply_to_message_id=update.message_id
-            )
-
         except ButtonDataInvalid:
-            print(result[0])
-        
-        except Exception as e:
-            print(e)
+               print(result[0])
+        except PhotoIdInvalid:
+            await bot.send_message(
+                text="Please Check The Backup Image Url Provided In dashboard.heroku.com/apps > YourApp > Settings > RevealConfigVars",
+                chat_id=update.chat.id
+            )
+        except Exception as f :
+                print(f)
 
 
 async def gen_invite_links(db, group_id, bot, update):

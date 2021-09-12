@@ -4,6 +4,7 @@
 
 from pyrogram import filters, Client
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
+from pyrogram.methods import invite_links
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
@@ -23,8 +24,7 @@ async def start(bot, update):
     except PeerIdInvalid :
         print("Add Me As Admin In Your FSub Channel If It Still Didnt Work Check The ID You Provided")
     except UserNotParticipant :
-        Fsub_Channel = await bot.get_chat(Translation.FSUB_CHANNEL)
-        invite_link = Fsub_Channel.invite_link
+        invite_link = Translation.FSUB_LINK
         if file_uid :
             my_bot = await bot.get_me().username
             buttons = [
@@ -64,7 +64,7 @@ async def start(bot, update):
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/CrazyBotsz"
+                                    'Providers', url=Translation.FSUB_LINK
                                 )
                         ]
                     ]
