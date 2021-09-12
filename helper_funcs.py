@@ -1,4 +1,5 @@
 import imdb
+import re
 
 async def get_poster(movie_name) :
 
@@ -21,3 +22,7 @@ async def get_poster(movie_name) :
     votes = searcher.get_movie_vote_details(movie_id)["data"]["demographics"]["imdb users"]["votes"]
     rating = searcher.get_movie_vote_details(movie_id)["data"]["demographics"]["imdb users"]["rating"]
     return(f"{poster}|{votes}|{rating}")
+
+def cleaner(movie) :
+    movie = re.sub(r"[(),#1-9.]", "", movie.lower())
+    remover = [""]
