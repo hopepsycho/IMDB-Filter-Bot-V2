@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) @AlbertEinsteinTG
+# (c) @hopepsycho
 import os
 
 class Translation(object):
@@ -11,7 +11,7 @@ class Translation(object):
 Join My Group And REquest A Movie To See My Pevers 🔥🔥😝
 
 For More Details Click Help Button Below..
-@CrazyBotsz
+@kunjppansupportez
 </i>"""    
     
     HELP_TEXT = """
@@ -44,20 +44,20 @@ For More Details Click Help Button Below..
             
             -> <code>Status</code> - Button Will Shows The Stats Of Your Channel
             
-@CrazyBotsz
+@kunjappansupportez
 """
     
     ABOUT_TEXT = """<b>➥ Name</b> : <code> Auto Filter Bot</code>
     
-<b>➥ Creator</b> : <b><i><a href="https://t.me/AlbertEinstein_TG">AlbertEinstein_TG</a></i></b>
+<b>➥ Creator</b> : <b><i><a href="https://t.me/king_of_psycho">PSYCHO</a></i></b>
 
-<b>➥ ReCreator</b> : <b><i><a href="tg://user?id=1093541873">MrPurple902</a></i></b>
+<b>➥ ReCreator</b> : <b><i><a href="tg://user?id=1316481146">hopepsycho</a></i></b>
 
 <b>➥ Language</b> : <code>Python3</code>
 
 <b>➥ Library</b> : <i><a href="https://docs.pyrogram.org">Pyrogram Asyncio 1.13.0 </a></i>
 
-<b>➥ Source Code</b> : <i><a href="https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot">Click Me</a></i>
+<b>➥ Source Code</b> : <i><a href="https://github.com/hopepsycho/professor_v2">Click Me</a></i>
 """
 
     SIZE_BUTTON = bool(os.environ.get("SIZE_BUTTON"))
