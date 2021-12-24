@@ -34,7 +34,7 @@ async def start(bot, update):
         else :
             buttons = [
                 InlineKeyboardButton("Channel", url=invite_link),
-                InlineKeyboardButton("Support", url="https://t.me/CrazyBotsz")
+                InlineKeyboardButton("Support", url="https://t.me/kunjappansupportez")
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
 
@@ -76,10 +76,10 @@ async def start(bot, update):
         return
 
     buttons = [[
-        InlineKeyboardButton('Developers', url='https://t.me/CrazyBotsz'),
-        InlineKeyboardButton('Source Code 🧾', url ='https://github.com/MrPurple902/IMDB-Filter-Bot-V2')
+        InlineKeyboardButton('Developers', url='https://t.me/kunjappansupportez'),
+        InlineKeyboardButton('Source Code 🧾', url ='https://github.com/hopepsycho/professor_v2')
     ],[
-        InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
+        InlineKeyboardButton('Support 🛠', url='https://t.me/kunjappansupport')
     ],[
         InlineKeyboardButton('Help ⚙', callback_data="help")
     ]]
