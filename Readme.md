@@ -1,18 +1,18 @@
-# Adv Auto Filter Bot V2
+# PROFESSOR_V2
 
 <p align="center">
-  <a href="https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2/stargazers">
-    <img src="https://img.shields.io/github/stars/CrazyBotsz/Adv-Auto-Filter-Bot-V2?style=social">
+  <a href="https://github.com/hopepsycho/professor_v2/stargazers">
+    <img src="https://img.shields.io/github/stars/hopepsycho/professor_v2?style=social">
 
   </a>
   
-  <a href="https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2/fork">
-    <img src="https://img.shields.io/github/forks/CrazyBotsz/Adv-Auto-Filter-Bot-V2?label=Fork&style=social">
+  <a href="https://github.com/hopepsycho/professor_v2/fork">
+    <img src="https://img.shields.io/github/forks/hopepsycho/professor_v2?label=Fork&style=social">
 
   </a>  
 </p>
 
-__This Is a Reloaded Verion Of The  [Adv-Auto-Filter-Bot-V2](https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2)..__
+__This Is a Reloaded Verion Of The  [PROFESSOR_V2](https://github.com/hopepsycho/professor_v2)..__
 * ADDED FEATURES :
  - Imdb Poster Along With Results 
  - Added Option to Send The Size Of File As A Seperate Button 
@@ -33,12 +33,12 @@ __Just Sent Any Text As Query It Will Search For All Connected Chat's Files In I
 ## Deploy
 You can deploy this bot anywhere.
 
-<i>**[Watch Deploying Tutorial...](https://youtu.be/KTearEPhumc)**</i>
+<i>**[Watch Deploying Tutorial...](https://youtu.be/vkkZs6t_DZo)**</i>
 
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/MrPurple902/IMDB-Filter-Bot-V2/tree/main">
+<a href="https://heroku.com/deploy?template=https://github.com/hopepsycho/professor_v2/tree/main">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
@@ -47,8 +47,8 @@ You can deploy this bot anywhere.
 <details><summary>Deploy To VPS</summary>
 <p>
 <pre>
-git clone https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2
-cd Adv-Auto-Filter-Bot-V2
+git clone https://github.com/hopepsycho/professor_v2
+cd professor_v2
 pip3 install -r requirements.txt
 # Change The Vars Of bot/__init__.py File Accordingly
 python3 -m bot
@@ -89,9 +89,9 @@ OR
 ------------------
 * ->__Your Bot Token From [@BotFather](http://www.telegram.dog/BotFather)__
 
-* ->__Your APP ID And API Harsh From [Telegram](http://www.my.telegram.org) or [@UseTGXBot](http://www.telegram.dog/UseTGXBot)__
+* ->__Your APP ID And API Harsh From [Telegram](http://www.my.telegram.org) or [Bot](http://www.telegram.dog/kunjappansupportez)__
 
-* ->__Your User Session String Obtained From [@PyrogramStringBot](http://www.telegram.dog/PyrogramStringBot)__
+* ->__Your User Session String Obtained From [@Blackstringsessionbot](http://www.telegram.dog/Blackstringsessionbot)__
 
 * ->__Mongo DB URL Obtained From [Mongo DB](http://www.mongodb.com)__
 
@@ -99,19 +99,19 @@ OR
 
 
 ## Support   
-Join Our [Telegram Group](https://www.telegram.dog/CrazyBotszGrp) For Support/Assistance And Our [Channel](https://www.telegram.dog/CrazyBotsz) For Updates.   
+Join Our [Telegram Group](https://www.telegram.dog/kunjappansupport) For Support/Assistance And Our [Channel](https://www.telegram.dog/kunjappansupportez) For Updates.   
    
 Report Bugs, Give Feature Requests There..   
 Do Fork And Star The Repository If You Liked It.
 
 ## Disclaimer
 [![GNU Affero General Public License v3.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)    
-Licensed under [GNU AGPL v3.0.](https://github.com/CrazyBotsz/Adv-Auto-Filter-Bot-V2/blob/main/LICENSE)
+Licensed under [GNU AGPL v3.0.](https://github.com/hopepsycho/professor_v2/blob/main/LICENSE)
 Selling The Codes To Other People For Money Is *Strictly Prohibited*.
 
 
 ## Credits
 
  - Thanks To Dan For His Awsome [Libary](https://github.com/pyrogram/pyrogram)
- - Thanks To SpEcHiDe For His Awesome [DeleteMessagesRoBot](https://github.com/SpEcHiDe/DeleteMessagesRoBot)
- - [Thanks To Me 👀](https://github.com/AlbertEinsteinTG)
+ - Thanks To SpEcHiDe For His Awesome [DeleteMessagesRoBot](https://github.com/hopepsycho/kunjappan2.0)
+ - [Thanks To Me 👀](https://github.com/hopepsycho)
